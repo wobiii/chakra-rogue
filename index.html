@@ -58,7 +58,51 @@
 
 <div id="screen"></div>
 
-<script>
+<script><!-- ========================= -->
+<!--      SUMMON SCREEN        -->
+<!-- ========================= -->
+
+<div id="summon-screen" style="display:none; padding:20px;">
+
+  <h2>Summon</h2>
+
+  <div style="margin-bottom:14px; font-size:18px;">
+    <div>Shards: <span id="shards">0</span></div>
+    <div>Advanced Stones: <span id="advancedStones">0</span></div>
+  </div>
+
+  <!-- STANDARD SUMMON -->
+  <div style="border:2px solid #666; padding:15px; margin-bottom:20px; border-radius:12px;">
+    <h3>Standard Summon Banner</h3>
+    <p>Rates: 80% 3★ • 17% 4★ • 3% 5★</p>
+
+    <button style="padding:10px 16px; margin-right:10px;"
+            onclick="doSummonStandard(1)">Summon x1 (25 Shards)</button>
+
+    <button style="padding:10px 16px;"
+            onclick="doSummonStandard(10)">Summon x10 (240 Shards)</button>
+  </div>
+
+  <!-- ADVANCED SUMMON -->
+  <div style="border:2px solid #9966ff; padding:15px; margin-bottom:20px; border-radius:12px;">
+    <h3>Advanced Summon Banner</h3>
+    <p>Rates: 65% 4★ • 30% 5★ • 5% SR 5★ (special)</p>
+    <p>10x pull guarantees at least one 4★</p>
+
+    <button style="padding:10px 16px; margin-right:10px;"
+            onclick="doSummonAdvanced(1)">Summon x1 (50 Stones)</button>
+
+    <button style="padding:10px 16px;"
+            onclick="doSummonAdvanced(10)">Summon x10 (460 Stones)</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="summon-results" style="margin-top:20px; font-size:18px;"></div>
+
+</div>
+
+<!-- make sure this stays at the bottom of your file -->
+<script src="gacha.js"></script>
 function openScreen(name) {
   const screen = document.getElementById('screen');
 
