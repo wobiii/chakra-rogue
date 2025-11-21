@@ -69,7 +69,30 @@ function openScreen(name) {
     <div class="btn" onclick="doSummon(10)">Summon 10</div>
     <div id="results"></div>
   `;
-}
+<div id="summon-screen" style="padding:20px;">
+  <h2>Summon</h2>
+
+  <div style="margin-bottom:14px;">
+    <div>Shards: <span id="shards">0</span></div>
+    <div>Advanced Stones: <span id="advancedStones">0</span></div>
+  </div>
+
+  <!-- Standard Banner -->
+  <div style="border:1px solid #555;padding:12px;margin-bottom:20px;border-radius:8px;">
+    <h3>Standard Summon</h3>
+    <button onclick="doSummonStandard(1)">Summon x1 (25 Shards)</button>
+    <button onclick="doSummonStandard(10)">Summon x10 (240 Shards)</button>
+  </div>
+
+  <!-- Advanced Banner -->
+  <div style="border:1px solid #555;padding:12px;border-radius:8px;">
+    <h3>Advanced Summon</h3>
+    <button onclick="doSummonAdvanced(1)">Summon x1 (50 Stones)</button>
+    <button onclick="doSummonAdvanced(10)">Summon x10 (460 Stones, 1 guaranteed 4★)</button>
+  </div>
+
+  <div id="results" style="margin-top:20px;"></div>
+</div>}
 
   
 
