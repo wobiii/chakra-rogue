@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Chakra Rogue</title>
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#071026">
+
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Chakra Rogue">
+
+<style>
+  body { 
+    background:#000; 
+    color:#fff; 
+    font-family:sans-serif; 
+    text-align:center; 
+    margin-top:60px;
+  }
+</style>
+</head>
+<body>
+<h1>Chakra Rogue</h1>
+<p>Prototype PWA installed successfully!</p>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+</body>
+</html>
