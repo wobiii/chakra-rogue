@@ -62,9 +62,14 @@
 function openScreen(name) {
   const screen = document.getElementById('screen');
 
-  if (name === 'game') {
-    screen.innerHTML = "<h2>Exploration Coming Soon</h2>";
-  }
+  if (name === 'summon') {
+  screen.innerHTML = `
+    <h2>Gacha Summoning</h2>
+    <div class="btn" onclick="doSummon(1)">Summon 1</div>
+    <div class="btn" onclick="doSummon(10)">Summon 10</div>
+    <div id="results"></div>
+  `;
+}
 
   if (name === 'summon') {
     screen.innerHTML = "<h2>Gacha Summoning</h2><p>Tap to roll (coming soon)</p>";
