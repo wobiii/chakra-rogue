@@ -98,6 +98,36 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
 </script>
+<script src="gacha.js"></script>
 
+<script>
+
+function rarityColor(r) {
+  if (r === 5) return "#FFD700"; // gold
+  if (r === 4) return "#B060FF"; // purple
+  return "#4DA6FF";              // blue
+}
+
+function doSummon(count) {
+  let resultBox = document.getElementById("results");
+  resultBox.innerHTML = "<p>Summoning...</p>";
+
+  setTimeout(() => {
+    let results = count === 1 ? [summonOne()] : summonTen();
+    let html = "";
+
+    results.forEach(c => {
+      html += `
+        <div style="margin:10px; font-size:18px; color:${rarityColor(c.rarity)}">
+          ${"★".repeat(c.rarity)} ${c.name}
+        </div>
+      `;
+    });
+
+    resultBox.innerHTML = html;
+  }, 500);
+}
+
+</script>
 </body>
 </html>
