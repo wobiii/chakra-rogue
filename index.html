@@ -6,30 +6,93 @@
 
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#071026">
-
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Chakra Rogue">
 
 <style>
-  body { 
-    background:#000; 
-    color:#fff; 
-    font-family:sans-serif; 
-    text-align:center; 
-    margin-top:60px;
+  body {
+    background: #000;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  #title {
+    font-size: 32px;
+    margin-top: 40px;
+    font-weight: bold;
+  }
+
+  .btn {
+    background: #111;
+    border: 2px solid #444;
+    padding: 15px;
+    width: 70%;
+    margin: 15px auto;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+
+  .btn:active {
+    background: #222;
+  }
+
+  #screen {
+    margin-top: 40px;
   }
 </style>
 </head>
 <body>
-<h1>Chakra Rogue</h1>
-<p>Prototype PWA installed successfully!</p>
+
+<div id="title">Chakra Rogue</div>
+
+<div id="menu">
+  <div class="btn" onclick="openScreen('game')">Start Game</div>
+  <div class="btn" onclick="openScreen('summon')">Summon (Gacha)</div>
+  <div class="btn" onclick="openScreen('characters')">Characters</div>
+  <div class="btn" onclick="openScreen('inventory')">Inventory</div>
+  <div class="btn" onclick="openScreen('missions')">Missions</div>
+  <div class="btn" onclick="openScreen('settings')">Settings</div>
+</div>
+
+<div id="screen"></div>
+
+<script>
+function openScreen(name) {
+  const screen = document.getElementById('screen');
+
+  if (name === 'game') {
+    screen.innerHTML = "<h2>Exploration Coming Soon</h2>";
+  }
+
+  if (name === 'summon') {
+    screen.innerHTML = "<h2>Gacha Summoning</h2><p>Tap to roll (coming soon)</p>";
+  }
+
+  if (name === 'characters') {
+    screen.innerHTML = "<h2>Your Characters</h2><p>No characters yet.</p>";
+  }
+
+  if (name === 'inventory') {
+    screen.innerHTML = "<h2>Inventory</h2><p>Empty.</p>";
+  }
+
+  if (name === 'missions') {
+    screen.innerHTML = "<h2>Missions</h2><p>Mission system coming soon.</p>";
+  }
+
+  if (name === 'settings') {
+    screen.innerHTML = "<h2>Settings</h2><p>Options coming soon.</p>";
+  }
+}
+</script>
 
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
 </script>
+
 </body>
 </html>
